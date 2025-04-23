@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2f3136; /* Discord dark background */
+    color: #dcddde; /* Light text color */
     line-height: 1.6;
 }
 
@@ -21,8 +21,8 @@ body {
 
 /* Header */
 header {
-    background-color: #333;
-    color: white;
+    background-color: #36393f; /* Dark Discord header */
+    color: #ffffff;
     padding: 20px 0;
     margin-bottom: 20px;
 }
@@ -41,7 +41,7 @@ button {
     padding: 15px 30px;
     font-size: 18px;
     color: white;
-    background-color: #4CAF50;
+    background-color: #7289da; /* Discord primary blue */
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -50,31 +50,31 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #5a6fbf; /* Hover effect */
 }
 
 button:active {
-    background-color: #388e3c;
+    background-color: #4e5d8e; /* Active state */
 }
 
 /* Result Section */
 .main-content {
-    background-color: #ffffff;
+    background-color: #40444b; /* Slightly lighter background for contrast */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #result {
     margin-top: 20px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: #dcddde;
     line-height: 1.8;
 }
 
 a {
-    color: #1a73e8;
+    color: #1dbf73; /* Discord green for the link */
     text-decoration: none;
     font-weight: bold;
 }
@@ -89,7 +89,7 @@ a:focus {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #2f3136;
     color: white;
     padding: 10px 0;
     margin-top: 40px;
@@ -102,7 +102,7 @@ footer p {
 /* Small Text */
 small {
     font-size: 0.9em;
-    color: #666;
+    color: #b9bbbe; /* Lighter grey */
     margin-top: 10px;
     display: block;
 }
