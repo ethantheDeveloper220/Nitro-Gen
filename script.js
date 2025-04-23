@@ -1,30 +1,25 @@
+// Function to generate a random Nitro code
 function generateNitroCode() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const sections = [4, 4, 4, 4, 4, 4]; // Format: XXXX-XXXX-XXXX-XXXX-XXXX-XXXX
-    let code = '';
-
-    sections.forEach(sectionLength => {
-        for (let i = 0; i < sectionLength; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            code += characters[randomIndex];
+    let nitroCode = '';
+    for (let i = 0; i < 6; i++) {
+        let segment = '';
+        for (let j = 0; j < 4; j++) {
+            segment += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        code += '-';
-    });
-
-    // Remove the last unnecessary dash
-    code = code.slice(0, -1);
-
-    return code;
+        nitroCode += segment;
+        if (i < 5) nitroCode += '-';
+    }
+    return nitroCode;
 }
 
-document.getElementById('generateButton').addEventListener('click', function() {
+// Function to update the page with the new Nitro code
+function updateCodeDisplay() {
+    const result = document.getElementById('result');
     const nitroCode = generateNitroCode();
-    
-    // Create a link from the generated code
-    const resultElement = document.getElementById('result');
-    resultElement.innerHTML = `
-        Generated Nitro Code: 
-        <a href="https://discord.gift/${nitroCode}" target="_blank">${nitroCode}</a><br>
-        <small>Click the link above to try redeeming the code on Discord. If the code is invalid or used, Discord will notify you.</small>
-    `;
-});
+    const link = `https://discord.gift/${nitroCode}`;
+    result.innerHTML = `Generated Nitro Code: <a href="${link}" target="_blank">${nitroCode}</a><br><small>Try redeeming the code by clicking the link above.</small>`;
+}
+
+// Adding event listener to the button to keep generating codes
+document.getElementById('generateButton').addEventListener('click', updateCodeDisplay);
